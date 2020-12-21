@@ -42,7 +42,7 @@ testing_extras = []
 
 setup(
     name='flask-feather',
-    version='0.0.1',
+    version='0.0.2',
     author='Tom Vos',
     author_email='tjvos1@gmail.com',
     cmdclass={
@@ -58,7 +58,7 @@ setup(
     include_package_data=True,
     install_requires=install_requires,
     extras_require={
-        'dev': ["pytest>=3.7", 'twine>=3.2'],
+        'dev': ["pytest>=3.7", 'twine>=3.2', 'check-manifest'],
     },
     classifiers=[
         'Development Status :: 3 - Alpha',

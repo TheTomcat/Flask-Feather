@@ -2,4 +2,5 @@ include LICENSE *.rst README.md
 recursive-exclude feather *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[cod]
-include flask_feather.py
+recursive-include src *.py
+include .gitmodules
