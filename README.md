@@ -1,6 +1,6 @@
 # Flask Feather
 
-A simple Tag (`{% icon "name" %}`) to implement [Feather Icons](https://feathericons.com) in Flask. This is largely based of the library [django_feather](https://github.com/jnsdrtlf/django-feather) by @jnsdrtlf.
+A simple Tag (`{% icon "name" %}`) to implement [Feather Icons](https://feathericons.com) in Flask. This is largely based of the library [django_feather](https://github.com/jnsdrtlf/django-feather) by [Jonas Drotleff](https://github.com/jnsdrtlf/).
 
 ## Install
 
@@ -44,7 +44,7 @@ The `icon` function takes the SVG source from the Feather project, applies addit
 ## Performance
 
 `flask-feather` borrows the application structure from `django-feather` and does not read the `.svg`
-files each time an icon is rendered. Instead, on installation, all the icons are written to a `.py`.
+files each time an icon is rendered. Instead, on installation, all the icons are written to a `.py` file.
 All icons are rendered on the server side, avoiding the need to call `feather.replace()` after the page has loaded.
 
 ## License
@@ -54,7 +54,9 @@ Feather is licensed under the [MIT License](https://github.com/colebemis/feather
 `flask-feather` is a derivative work of `django-feather`, both of which are licensed under the Apache License, Version 2.0:
 
 ```license
-    Copyright 2020 Jonas Drotleff <j.drotleff@desk-lab.de>
+    Modifications Copyright 2020 Tom Vos <tjvos1@gmail.com>
+    
+    Original Django-feather Copyright 2020 Jonas Drotleff <j.drotleff@desk-lab.de>
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
