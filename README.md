@@ -39,8 +39,14 @@ def create_app(config):
 
 It's pretty simple to use this package. From within a jinja template:
 
-```jinjatemplate
+```html
 <p>{{ feather.icon('icon-name', width=32, height=32) }}</p>
+```
+
+If the property you're modifying has a hyphen, use an underscore instead. You can refer to icon names with either hyphens or underscores.
+
+```html
+<p>{{ feather.icon('icon-name', stroke_width=2) }}</p>
 ```
 
 The `icon` function takes the SVG source from the Feather project, applies additional attributes and return the SVG tag.
