@@ -42,7 +42,7 @@ testing_extras = []
 
 setup(
     name='flask-feather',
-    version='0.0.2',
+    version='0.0.3',
     author='Tom Vos',
     author_email='tjvos1@gmail.com',
     cmdclass={
@@ -52,9 +52,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/thetomcat/flask-feather',
-    py_modules=["flask_feather"],
+    # py_modules=["flask_feather"],
     package_dir= {'':'src'},
-    packages=find_packages(),
+    packages=find_packages(where='src'),
     include_package_data=True,
     install_requires=install_requires,
     extras_require={
