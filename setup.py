@@ -12,7 +12,7 @@ class BuildIconsCommand(build_py):
     def run(self):
         # First copy all files
         super(BuildIconsCommand, self).run()
-        build_file = path.join('build', 'lib', 'icons.py')
+        build_file = path.join('build', 'lib', 'flask_feather','icons.py')
         icon_dir = path.join('feather', 'icons')
         files = [f for f in os.listdir(icon_dir)
                  if path.isfile(path.join(icon_dir, f))]
@@ -53,7 +53,8 @@ setup(
     long_description_content_type="text/markdown",
     url='https://github.com/thetomcat/flask-feather',
     py_modules=["flask_feather"],
-    package_dir={'':'.'},
+    package_dir= {'':'src'},
+    packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     extras_require={
@@ -62,7 +63,6 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Framework :: Flask',
-        'Framework :: Flask :: 1.1',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',

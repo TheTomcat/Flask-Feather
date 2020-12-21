@@ -3,7 +3,7 @@ from jinja2 import Markup
 from xml.dom import minidom
 import io
 
-from .flask_feather import icons
+from . import icons
 
 class Feather(object):
     def __init__(self, app=None):
