@@ -1,5 +1,9 @@
 # Flask Feather
 
+[![Build Status](https://travis-ci.com/TheTomcat/Flask-Feather.svg?branch=main)](https://travis-ci.com/TheTomcat/Flask-Feather)
+![GitHub](https://img.shields.io/github/license/TheTomcat/Flask-Feather)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/flask-feather)
+
 A simple Tag (`{% icon "name" %}`) to implement [Feather Icons](https://feathericons.com) in Flask. This is largely based of the library [django_feather](https://github.com/jnsdrtlf/django-feather) by [Jonas Drotleff](https://github.com/jnsdrtlf/).
 
 ## Install
