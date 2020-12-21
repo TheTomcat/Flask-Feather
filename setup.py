@@ -42,7 +42,7 @@ testing_extras = []
 
 setup(
     name='flask-feather',
-    version='0.0.4',
+    version='0.0.5',
     author='Tom Vos',
     author_email='tjvos1@gmail.com',
     cmdclass={
