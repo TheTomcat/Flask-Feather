@@ -13,12 +13,12 @@ class Feather(object):
         if app is not None:
             self.init_app(app)
         if import_dir is not None:
-            #print(f"Attempting to import custom svg from {import_dir}")
+            print(f"Attempting to import custom svg from {import_dir}")
             files = [f for f in os.listdir(import_dir)
                  if path.isfile(path.join(import_dir, f))]
-            #print(f"{len(files)} file(s) found")
+            print(f"{len(files)} file(s) found")
             for file in files:
-                #print(f"Parsing {file}")
+                print(f"Parsing {file}")
                 icon_name = str(file.split('.')[0]).replace('-', '_')
                 with open(path.join(import_dir, file),'r') as icon:
                     svg = icon.read()

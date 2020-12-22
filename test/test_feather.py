@@ -1,5 +1,6 @@
 from flask import Flask, render_template_string
 from flask_feather import Feather, icons
+from os import path
 
 app = Flask(__name__)
 feather = Feather(app)
@@ -21,5 +22,5 @@ def test_mod_attr():
 
 def test_custom_import():
     app = Flask(__name__)
-    feather = Feather(app, import_dir='test\\customsvg')
+    feather = Feather(app, import_dir=path.join('test','customsvg'))
     assert getattr(icons, 'menu_close') is not None
