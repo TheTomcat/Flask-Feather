@@ -35,6 +35,20 @@ def create_app(config):
     feather.init_app(app)
 ```
 
+### Advanced setup
+
+In addition to the wonderful icons provided in the feather set, you can supply your own svg icons, to attempt to parse them and use them in the same format. Simply initialise the extension with a directory containing .svg files that are similar in style to the feather ones. They should resemble the feather icon style as near as possible - any significant differences in formatting/structure may result in unexpected errors.
+
+```python
+feather = Feather(import_dir='app\\static\\customsvg')
+
+def create_app(config):
+    app = Flask(__name__)
+    app.config.from_object(config)
+
+    feather.init_app(app)
+```
+
 ## Usage
 
 It's pretty simple to use this package. From within a jinja template:
@@ -56,6 +70,8 @@ The `icon` function takes the SVG source from the Feather project, applies addit
 `flask-feather` borrows the application structure from `django-feather` and does not read the `.svg`
 files each time an icon is rendered. Instead, on installation, all the icons are written to a `.py` file.
 All icons are rendered on the server side, avoiding the need to call `feather.replace()` after the page has loaded.
+
+Any custom icons are parsed each time the server is restarted, and not every time they're loaded.
 
 ## License
 

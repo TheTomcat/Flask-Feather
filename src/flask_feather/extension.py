@@ -2,13 +2,30 @@ from flask import current_app
 from jinja2 import Markup
 from xml.dom import minidom
 import io
+import os
+from os import path
+import re
 
 from . import icons
 
 class Feather(object):
-    def __init__(self, app=None):
+    def __init__(self, app=None, import_dir=None):
         if app is not None:
             self.init_app(app)
+        if import_dir is not None:
+            #print(f"Attempting to import custom svg from {import_dir}")
+            files = [f for f in os.listdir(import_dir)
+                 if path.isfile(path.join(import_dir, f))]
+            #print(f"{len(files)} file(s) found")
+            for file in files:
+                #print(f"Parsing {file}")
+                icon_name = str(file.split('.')[0]).replace('-', '_')
+                with open(path.join(import_dir, file),'r') as icon:
+                    svg = icon.read()
+                svg = re.sub(r'\n', r' ', svg)
+                svg = re.sub(r'\s+', r' ', svg)
+                svg = svg.replace('> <', '><').replace(' />', '/>')
+                setattr(icons, icon_name, svg)
 
     def init_app(self, app):
         if not hasattr(app,'extensions'):

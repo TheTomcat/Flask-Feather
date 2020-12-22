@@ -1,5 +1,5 @@
 from flask import Flask, render_template_string
-from flask_feather import Feather
+from flask_feather import Feather, icons
 
 app = Flask(__name__)
 feather = Feather(app)
@@ -18,3 +18,8 @@ def test_attr():
 def test_mod_attr():
     with app.app_context():
         assert 'stroke-width="20"' in render_template_string("{{ feather.icon('aperture', stroke_width=20) }}")
+
+def test_custom_import():
+    app = Flask(__name__)
+    feather = Feather(app, import_dir='test\\customsvg')
+    assert getattr(icons, 'menu_close') is not None
