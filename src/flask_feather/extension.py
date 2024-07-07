@@ -1,5 +1,5 @@
 from flask import current_app
-from jinja2 import Markup
+from MarkupSafe import Markup
 from xml.dom import minidom
 import io
 import os
